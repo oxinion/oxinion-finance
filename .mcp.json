@@ -2,8 +2,7 @@
   "mcpServers": {
     "Oxinion Finance": {
       "type": "http",
-      "url": ""
+      "url": "https://mcp.oxinion.com/finance/mcp"
     }
-  },
-  "recommendedCategories": []
+  }
 }

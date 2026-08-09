@@ -55,7 +55,7 @@ connector's four tools.
 This repo doubles as a plugin marketplace, so anyone can add it and install:
 
 ```
-/plugin marketplace add oxinion/finance-plugin
+/plugin marketplace add oxinion/oxinion-finance-plugin
 /plugin install oxinion-finance@oxinion-finance
 ```
 
