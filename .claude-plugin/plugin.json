@@ -1,0 +1,20 @@
+{
+  "name": "oxinion-finance",
+  "version": "0.1.0",
+  "description": "Buy-side-style equity research plus live signals, portfolio review, and autopilot preview — powered by the Oxinion Finance connector.",
+  "author": {
+    "name": "Oxinion"
+  },
+  "homepage": "https://github.com/oxinion/finance-plugin",
+  "repository": "https://github.com/oxinion/finance-plugin",
+  "license": "MIT",
+  "keywords": [
+    "finance",
+    "investing",
+    "equity-research",
+    "stocks",
+    "valuation",
+    "portfolio",
+    "oxinion"
+  ]
+}

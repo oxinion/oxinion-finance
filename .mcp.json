@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "Oxinion Finance": {
+      "type": "http",
+      "url": ""
+    }
+  },
+  "recommendedCategories": []
+}

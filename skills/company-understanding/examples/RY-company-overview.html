@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RY — Company Overview</title>
+<style>
+  :root{--ink:#111;--blue:#0A66FF;--blue-2:#E8F0FF;--accent:#F5A623;--line:#E3E6EB;--mut:#5A6472;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:#fff;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;line-height:1.5;}
+  .wrap{max-width:860px;margin:0 auto;padding:32px 28px 60px;}
+  .tag{display:inline-block;font-size:12px;color:var(--mut);border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-bottom:16px;}
+  h1{font-size:26px;margin:0 0 2px;}
+  .sub{color:var(--mut);font-size:14px;margin-bottom:22px;}
+  .drill{font-size:22px;font-weight:700;line-height:1.35;background:var(--blue-2);border-left:5px solid var(--blue);padding:18px 20px;border-radius:8px;margin:0 0 30px;}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.04em;color:var(--blue);margin:34px 0 12px;border-bottom:2px solid var(--line);padding-bottom:6px;}
+  table{border-collapse:collapse;width:100%;font-size:14px;margin:6px 0;}
+  th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);}
+  th{color:var(--mut);font-weight:600;}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;}
+  .src{color:var(--mut);font-size:12px;}
+  .bar{height:14px;background:var(--blue);border-radius:3px;display:inline-block;vertical-align:middle;}
+  .barwrap{display:flex;align-items:center;gap:8px;}
+  .up{color:#0a8f3c;font-weight:600;}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+  .card{border:1px solid var(--line);border-radius:8px;padding:12px 14px;}
+  .k{font-size:12px;color:var(--mut);}
+  .v{font-size:20px;font-weight:700;}
+  ul{margin:6px 0 6px 0;padding-left:20px;}
+  li{margin:5px 0;}
+  .warn{background:#FFF6E6;border-left:4px solid var(--accent);padding:8px 12px;border-radius:6px;font-size:13px;margin-top:8px;}
+  .ox{border:1px solid var(--blue);border-radius:10px;padding:14px 16px;background:#F7FAFF;}
+  .pill{display:inline-block;font-weight:700;padding:2px 10px;border-radius:6px;font-size:13px;}
+  .hold{background:#FFF3D6;color:#7a5900;}
+  .foot{color:var(--mut);font-size:12px;margin-top:28px;border-top:1px solid var(--line);padding-top:12px;}
+  svg{max-width:100%;height:auto;}
+  .lab{font-size:12px;fill:var(--mut);}
+  .box{fill:#fff;stroke:var(--blue);stroke-width:1.5;}
+  .boxc{fill:var(--blue-2);stroke:var(--blue);stroke-width:1.5;}
+  .btxt{font-size:12.5px;font-weight:600;fill:var(--ink);}
+  .flow{stroke:var(--blue);stroke-width:1.6;fill:none;marker-end:url(#arw);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="tag">📡 Web-sourced · upload a 10-K (annual report) for page-cited precision</span>
+  <h1>Royal Bank of Canada <span style="color:var(--mut);font-weight:600;">(RY)</span></h1>
+  <div class="sub">Canada's largest bank · fiscal year ends Oct 31 · Company Overview card</div>
+
+  <!-- 1 -->
+  <div class="drill">RBC takes in Canadians' deposits, lends and invests that money out at a higher rate than it pays savers, and charges fees on top for managing rich people's money and running big companies' deals.</div>
+
+  <!-- 2 -->
+  <h2>② How it makes money</h2>
+  <svg viewBox="0 0 820 260" role="img" aria-label="RBC money flow">
+    <defs><marker id="arw" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 Z" fill="#0A66FF"/></marker></defs>
+    <!-- savers -->
+    <rect class="box" x="10" y="95" width="150" height="60" rx="8"/>
+    <text class="btxt" x="85" y="120" text-anchor="middle">Depositors</text>
+    <text class="lab" x="85" y="140" text-anchor="middle">savers, businesses</text>
+    <!-- RBC core -->
+    <rect class="boxc" x="330" y="80" width="170" height="90" rx="10"/>
+    <text class="btxt" x="415" y="112" text-anchor="middle">RBC</text>
+    <text class="lab" x="415" y="132" text-anchor="middle">lends &amp; invests</text>
+    <text class="lab" x="415" y="150" text-anchor="middle">deposits</text>
+    <!-- borrowers -->
+    <rect class="box" x="660" y="20" width="150" height="60" rx="8"/>
+    <text class="btxt" x="735" y="45" text-anchor="middle">Borrowers</text>
+    <text class="lab" x="735" y="64" text-anchor="middle">mortgages, loans</text>
+    <!-- wealth/markets -->
+    <rect class="box" x="660" y="105" width="150" height="55" rx="8"/>
+    <text class="btxt" x="735" y="130" text-anchor="middle">Wealth clients</text>
+    <text class="lab" x="735" y="148" text-anchor="middle">fees on assets</text>
+    <rect class="box" x="660" y="180" width="150" height="55" rx="8"/>
+    <text class="btxt" x="735" y="205" text-anchor="middle">Corporates</text>
+    <text class="lab" x="735" y="223" text-anchor="middle">deal &amp; trading fees</text>
+    <!-- flows -->
+    <path class="flow" d="M160,120 L328,120"/>
+    <text class="lab" x="245" y="112" text-anchor="middle">deposits (cheap $)</text>
+    <path class="flow" d="M500,110 L658,55"/>
+    <text class="lab" x="585" y="78" text-anchor="middle">interest earned</text>
+    <path class="flow" d="M500,128 L658,132"/>
+    <path class="flow" d="M500,150 L658,200"/>
+    <!-- spread callout -->
+    <text class="lab" x="415" y="205" text-anchor="middle" style="fill:#0A66FF;font-weight:700;">Profit = rate earned − rate paid + fees</text>
+  </svg>
+
+  <!-- 3 -->
+  <h2>③ Where the profit comes from — by segment (FY2025 net income)</h2>
+  <table>
+    <tr><th>Segment</th><th class="num">Net income</th><th class="num">Share</th><th>YoY</th></tr>
+    <tr><td>Personal Banking</td><td class="num">C$7,105M</td><td class="num">34.4%</td><td><span class="up">+20%</span></td></tr>
+    <tr><td>Capital Markets</td><td class="num">C$5,393M</td><td class="num">26.1%</td><td><span class="up">+18%</span></td></tr>
+    <tr><td>Wealth Management</td><td class="num">C$4,289M</td><td class="num">20.8%</td><td><span class="up">+25%</span></td></tr>
+    <tr><td>Commercial Banking</td><td class="num">C$3,020M</td><td class="num">14.6%</td><td><span class="up">+7%</span></td></tr>
+    <tr><td>Insurance</td><td class="num">C$828M</td><td class="num">4.0%</td><td><span class="up">+14%</span></td></tr>
+    <tr><td>Corporate Support</td><td class="num">(C$266M)</td><td class="num">—</td><td>improved</td></tr>
+  </table>
+  <div class="barwrap src" style="margin-top:4px;">Personal <span class="bar" style="width:206px"></span> · Capital Markets <span class="bar" style="width:157px"></span></div>
+  <p class="src">Shares are % of the five profitable segments (C$20,635M). <a href="https://www.newswire.ca/news-releases/royal-bank-of-canada-reports-fourth-quarter-and-2025-results-845146046.html">Source: RBC Q4/FY2025 results</a></p>
+  <p class="src"><b>By geography:</b> Canada-dominant, with the US the #2 market (City National + Capital Markets) and a smaller international book. Exact revenue-by-geography split — <code>needs verification</code> (not cleanly broken out in the sources read).</p>
+
+  <!-- 4 -->
+  <h2>④ Customers &amp; competitors</h2>
+  <ul>
+    <li><b>Customers:</b> ~17M+ retail and business clients (B2C + B2B), plus wealth clients and institutional/corporate clients in Capital Markets. No single-customer concentration risk — it's a mass-market bank.</li>
+    <li><b>TD Bank</b> — the other giant; bigger US retail footprint (and its US regulatory baggage).</li>
+    <li><b>BMO</b> — deeper US commercial push via Bank of the West.</li>
+    <li><b>Scotiabank</b> — more tilted to Latin America; RBC is more Canada + US-affluent.</li>
+  </ul>
+
+  <!-- 5 -->
+  <h2>⑤ The KPIs that matter for a bank</h2>
+  <table>
+    <tr><th>KPI</th><th class="num">2024</th><th class="num">2025</th><th>Why it matters</th></tr>
+    <tr><td>ROE</td><td class="num">14.4%</td><td class="num">16.3%</td><td>How much profit per $ of shareholder capital — the single best "is this a good bank" gauge.</td></tr>
+    <tr><td>CET1 ratio</td><td class="num">13.2%</td><td class="num">13.5%</td><td>The capital cushion vs. regulators' minimum — higher means it can absorb losses and still pay dividends/buy back stock.</td></tr>
+  </table>
+  <p class="src"><a href="https://www.newswire.ca/news-releases/royal-bank-of-canada-reports-fourth-quarter-and-2025-results-845146046.html">Source: RBC FY2025 results</a></p>
+
+  <!-- 6 -->
+  <h2>⑥ Management &amp; ownership</h2>
+  <ul>
+    <li>CEO <b>Dave McKay</b> — leading RBC since 2014; a career RBC banker.</li>
+    <li>No founder involvement (RBC dates to 1864); widely held with no controlling shareholder.</li>
+    <li>Institutions dominate the register; insider ownership is immaterial for a bank this size.</li>
+  </ul>
+
+  <!-- 7 -->
+  <h2>⑦ Shareholder returns</h2>
+  <ul>
+    <li><b>Dividend:</b> C$6.04/share for FY2025, up <span class="up">+7.9%</span>; the quarterly payout was raised to C$1.64 (+6%). A long, steady record of increases.</li>
+    <li><b>Buybacks:</b> RBC runs a normal-course issuer bid, but the exact FY2025 repurchase dollar amount — <code>needs verification</code>.</li>
+  </ul>
+
+  <!-- 8 -->
+  <h2>⑧ How this bank dies → three risks</h2>
+  <p><b>The death scenario:</b> a deep Canadian housing bust sends mortgage and consumer losses through the roof at the same time the economy stalls — the loan book RBC has spent 160 years building becomes the thing that sinks it.</p>
+  <ul>
+    <li><b>Canadian housing / consumer credit:</b> RBC is heavily levered to Canadian mortgages; a price crash or unemployment spike hits provisions hard.</li>
+    <li><b>Rate cycle:</b> net interest margins and loan demand swing with central-bank rates — cuts can squeeze the spread that is the core engine.</li>
+    <li><b>Integration &amp; regulation:</b> digesting HSBC Canada and operating across tightening capital rules leaves less room for error.</li>
+  </ul>
+
+  <!-- 9 -->
+  <h2>⑨ Core financials — bank frame (FCF / net-debt don't apply)</h2>
+  <table>
+    <tr><th>Metric</th><th class="num">FY2023</th><th class="num">FY2024</th><th class="num">FY2025</th><th>YoY '25</th></tr>
+    <tr><td>Total revenue</td><td class="num">—</td><td class="num">C$57.3B</td><td class="num">C$66.6B</td><td><span class="up">+16%</span></td></tr>
+    <tr><td>Net income</td><td class="num">~C$14.6B*</td><td class="num">C$16.2B</td><td class="num">C$20.4B</td><td><span class="up">+26%</span></td></tr>
+    <tr><td>Diluted EPS</td><td class="num">—</td><td class="num">C$11.25</td><td class="num">C$14.07</td><td><span class="up">+25%</span></td></tr>
+    <tr><td>ROE</td><td class="num">—</td><td class="num">14.4%</td><td class="num">16.3%</td><td><span class="up">+1.9pp</span></td></tr>
+  </table>
+  <div class="warn">Record year: revenue +16% and net income +26%, helped by the HSBC Canada acquisition (closed 2024) and strong Wealth &amp; Capital Markets. The step-up is partly acquisition-driven, so organic growth is lower than the headline.</div>
+  <p class="src">*FY2023 net income derived from "FY2024 +11% vs 2023". <a href="https://www.newswire.ca/news-releases/royal-bank-of-canada-reports-fourth-quarter-and-2024-results-867762691.html">2024 results</a> · <a href="https://www.newswire.ca/news-releases/royal-bank-of-canada-reports-fourth-quarter-and-2025-results-845146046.html">2025 results</a></p>
+
+  <!-- 9.5 Oxinion -->
+  <h2>⑨½ Oxinion signal &amp; factor read</h2>
+  <div class="ox">
+    <div style="margin-bottom:10px;">
+      <span class="pill hold">HOLD</span>
+      &nbsp;<b>$210.30</b> · trend <span class="up">UP</span> · RSI <b>53.4</b> (neutral) · score 50
+      <div class="src">Signal is neutral: price in an uptrend but momentum not stretched — no strong entry/exit edge right now.</div>
+    </div>
+    <table>
+      <tr><th>Factor</th><th>Metric</th><th class="num">Value</th><th>Read</th></tr>
+      <tr><td>Quality</td><td>ROE</td><td class="num">16.2%</td><td>Strong</td></tr>
+      <tr><td>Value</td><td>P/E</td><td class="num">19.1×</td><td>Fair–full</td></tr>
+      <tr><td>Value</td><td>P/B</td><td class="num">3.17×</td><td>Rich for a bank</td></tr>
+      <tr><td>Momentum</td><td>12-1m</td><td class="num">57.6%</td><td>Strong</td></tr>
+      <tr><td>Growth</td><td>Revenue CAGR</td><td class="num">10.9%</td><td>Solid</td></tr>
+      <tr><td>Growth</td><td>EPS growth</td><td class="num">27.5%</td><td>Strong</td></tr>
+    </table>
+    <div class="src">ROIC, gross profitability and FCF yield are N/A — they don't apply to a bank's balance sheet. Signal as of 2026-08-07; factors as of 2026-08-03. Source: Oxinion Finance.</div>
+  </div>
+
+  <!-- 10 -->
+  <h2>⑩ What I still don't know</h2>
+  <ul>
+    <li>The exact revenue-by-geography split (Canada vs US vs international) and the net interest margin trend — you'd want the annual report / MD&amp;A.</li>
+    <li>FY2025 buyback dollars and the provision-for-credit-losses trajectory (the real tell on credit quality).</li>
+    <li>Whether the Oxinion $210.30 is the TSX (C$) or NYSE (US$) line — confirm the listing/currency basis.</li>
+  </ul>
+
+  <div class="foot">
+    📡 Web-sourced card — upload RBC's annual report for page-cited precision. RBC is a bank, so this card uses a bank frame (revenue, net income, ROE, CET1) instead of FCF/net-debt. Model-computed Oxinion signals are not investment advice.<br>
+    Sources: <a href="https://www.newswire.ca/news-releases/royal-bank-of-canada-reports-fourth-quarter-and-2025-results-845146046.html">RBC FY2025 results</a>, <a href="https://www.newswire.ca/news-releases/royal-bank-of-canada-reports-fourth-quarter-and-2024-results-867762691.html">RBC FY2024 results</a>, Oxinion Finance (finance.oxinion.com).
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "oxinion-finance",
+  "owner": {
+    "name": "Oxinion",
+    "url": "https://github.com/oxinion"
+  },
+  "metadata": {
+    "description": "Oxinion Finance equity-research and portfolio plugin.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "oxinion-finance",
+      "source": "./",
+      "description": "Buy-side-style equity research plus live signals, portfolio review, and autopilot preview — powered by the Oxinion Finance connector.",
+      "version": "0.1.0",
+      "author": {
+        "name": "Oxinion"
+      }
+    }
+  ]
+}
