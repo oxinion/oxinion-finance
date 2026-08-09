@@ -13,39 +13,39 @@ connector's four tools.
 
 **Research (web + filings, Oxinion as a trusted supplement):**
 
-| Skill | Ask it |
-| --- | --- |
-| `company-understanding` | "What does [company] do?", "give me a company overview" |
-| `financial-analysis` | "Break down [ticker]'s financials", "is the FCF real?" |
-| `valuation` | "Is [ticker] cheap?", "build me a DCF", "what's it worth?" |
-| `risk-quality` | "How risky is [ticker]?", "could this go bankrupt?" |
-| `market-monitoring` | "What's going on with [ticker]?", "any news on [company]?" |
-| `investment-research` | "Write a full research note on [ticker]" |
+| Skill                   | Ask it                                                     |
+| ----------------------- | ---------------------------------------------------------- |
+| `company-understanding` | "What does [company] do?", "give me a company overview"    |
+| `financial-analysis`    | "Break down [ticker]'s financials", "is the FCF real?"     |
+| `valuation`             | "Is [ticker] cheap?", "build me a DCF", "what's it worth?" |
+| `risk-quality`          | "How risky is [ticker]?", "could this go bankrupt?"        |
+| `market-monitoring`     | "What's going on with [ticker]?", "any news on [company]?" |
+| `investment-research`   | "Write a full research note on [ticker]"                   |
 
 **Oxinion account tools (thin wrappers over the connector):**
 
-| Skill | Ask it | Notes |
-| --- | --- | --- |
-| `portfolio-analysis` | "Analyze my portfolio", "review my holdings" | Reads your saved target allocation, enriched with live signals. |
-| `autopilot` | "Run autopilot", "what would a rebalance do?" | **Preview only** — never places live trades. |
+| Skill                | Ask it                                        | Notes                                                           |
+| -------------------- | --------------------------------------------- | --------------------------------------------------------------- |
+| `portfolio-analysis` | "Analyze my portfolio", "review my holdings"  | Reads your saved target allocation, enriched with live signals. |
+| `autopilot`          | "Run autopilot", "what would a rebalance do?" | **Preview only** — never places live trades.                    |
 
 ### Agents (2)
 
-| Agent | Purpose |
-| --- | --- |
-| `financial-analyst` | Numbers-first read of one company's statements, margins, cash flow, and capital allocation. |
-| `investment-researcher` | Full buy-side research note end to end, with a bull-vs-bear box and dated sources. |
+| Agent                   | Purpose                                                                                     |
+| ----------------------- | ------------------------------------------------------------------------------------------- |
+| `financial-analyst`     | Numbers-first read of one company's statements, margins, cash flow, and capital allocation. |
+| `investment-researcher` | Full buy-side research note end to end, with a bull-vs-bear box and dated sources.          |
 
 ### Command (1)
 
-| Command | Usage |
-| --- | --- |
+| Command            | Usage                                                                      |
+| ------------------ | -------------------------------------------------------------------------- |
 | `/analyze-company` | `/analyze-company AAPL` — one-page overview from a ticker or company name. |
 
 ### Connector
 
-| Connector | How it's referenced |
-| --- | --- |
+| Connector       | How it's referenced                                                                                                                                                                                                                                                                      |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Oxinion Finance | Referenced by name in `.mcp.json`. Hosted connector with a dynamic endpoint — no URL to configure; connecting it in Claude is all that's needed. Provides `stock-analysis`, `stock-fundamentals`, `portfolio-analysis`, and `run-autopilot`. Covers the Oxinion Global Top 100 universe. |
 
 ## Install
@@ -54,7 +54,7 @@ connector's four tools.
 
 This repo doubles as a plugin marketplace, so anyone can add it and install:
 
-```
+```bash
 /plugin marketplace add oxinion/oxinion-finance-plugin
 /plugin install oxinion-finance@oxinion-finance
 ```
