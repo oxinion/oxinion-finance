@@ -41,8 +41,8 @@ and `get_autopilot` tools directly.
 
 ### Connector
 
-| Connector       | How it's referenced                                                                                                                                                                                                                                                                      |
-| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Connector       | How it's referenced                                                                                                                                                                                                                                                                                                                                                                                                               |
+| --------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Oxinion Finance | Referenced by name in `.mcp.json`. Hosted connector with a dynamic endpoint — no URL to configure; connecting it in Claude is all that's needed. Provides `get_stock_quote`, `get_stock_signal`, `get_stock_fundamentals`, `get_earnings_history`, `get_dividend_history`, `get_latest_filing`, `get_portfolio`, `get_portfolio_positions`, `analyze_portfolio`, and `get_autopilot`. Covers the Oxinion Global Top 500 universe. |
 
 ## Install
@@ -52,7 +52,7 @@ and `get_autopilot` tools directly.
 This repo doubles as a plugin marketplace, so anyone can add it and install:
 
 ```bash
-/plugin marketplace add oxinion/oxinion-finance-plugin
+/plugin marketplace add oxinion/finance-plugin
 /plugin install oxinion-finance@oxinion-finance
 ```
 
