@@ -31,10 +31,10 @@ connector's four tools.
 
 ### Agents (2)
 
-| Agent                   | Purpose                                                                                     |
-| ----------------------- | ------------------------------------------------------------------------------------------- |
-| `financial-analyst`     | Numbers-first read of one company's statements, margins, cash flow, and capital allocation. |
-| `investment-researcher` | Full buy-side research note end to end, with a bull-vs-bear box and dated sources.          |
+| Agent               | Purpose                                                                                                    |
+| ------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `financial-analyst` | Single-stock risk read — debt, liquidity, margin deterioration, business risk, and valuation risk.         |
+| `portfolio-manager` | Portfolio risk read — position size, concentration, sector exposure, correlation, allocation, rebalancing. |
 
 ### Command (1)
 
