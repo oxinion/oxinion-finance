@@ -9,7 +9,7 @@ connector's four tools.
 
 ## Components
 
-### Skills (8)
+### Skills (6)
 
 **Research (web + filings, Oxinion as a trusted supplement):**
 
@@ -22,12 +22,9 @@ connector's four tools.
 | `market-monitoring`     | "What's going on with [ticker]?", "any news on [company]?" |
 | `investment-research`   | "Write a full research note on [ticker]"                   |
 
-**Oxinion account tools (thin wrappers over the connector):**
-
-| Skill                | Ask it                                        | Notes                                                           |
-| -------------------- | --------------------------------------------- | --------------------------------------------------------------- |
-| `portfolio-analysis` | "Analyze my portfolio", "review my holdings"  | Reads your saved target allocation, enriched with live signals. |
-| `autopilot`          | "Run autopilot", "what would a rebalance do?" | **Preview only** — never places live trades.                    |
+Portfolio review and the autopilot rebalance preview are handled by the
+`portfolio-manager` agent, which calls the connector's `portfolio-analysis`
+and `run-autopilot` tools directly.
 
 ### Agents (2)
 
@@ -70,9 +67,9 @@ then connect the Oxinion Finance connector.
 ## Setup notes
 
 - Stock signals refresh daily; the QVMG factor scorecard refreshes weekly.
-- `portfolio-analysis` and `autopilot` read the target allocation saved to your
-  Oxinion account — set that up in Oxinion Finance first, or they'll return
-  empty.
+- The `portfolio-manager` agent (via the connector's `portfolio-analysis` and
+  `run-autopilot` tools) reads the target allocation saved to your Oxinion
+  account — set that up in Oxinion Finance first, or it'll return empty.
 - Names outside the Oxinion Global Top 100 return an out-of-universe message
   rather than fabricated numbers.
 - Everything here is automated market data and analysis, **not** personalized
