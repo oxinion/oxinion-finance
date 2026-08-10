@@ -74,11 +74,11 @@ Every number ties to a source. No exceptions.
 For an Oxinion Global **Top 500** name, pull the current multiples as your
 point-in-time anchor:
 
-- `stock-fundamentals(symbol)` → `pe`, `pb`, `fcf_yield` (plus `roe`, `roic`,
+- `get_stock_fundamentals(symbol)` → `pe`, `pb`, `fcf_yield` (plus `roe`, `roic`,
   `revenue_cagr`, `eps_growth` if you need drivers). All ratios are **decimal
   fractions**: `fcf_yield` 0.045 → 4.5%; multiply rate factors by 100 and add `%`.
   Show `pe` and `pb` as `x` multiples (e.g. `18.4x`), never as `%`.
-- `stock-analysis(symbol)` → current `price` for the quote you value against.
+- `get_stock_signal(symbol)` → current `price` for the quote you value against.
 
 Treat these as **current, point-in-time only.** The MCP carries **no multiple
 history and no time-series** — so the historical range and the peer set must come

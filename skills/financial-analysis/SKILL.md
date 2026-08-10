@@ -81,10 +81,10 @@ key or an unreachable MCP it also fails. In **either** case, skip the Oxinion
 block entirely and rely on uploaded docs / web — the analysis must stand on its
 own. Never backfill Oxinion numbers from memory.
 
-- `stock-fundamentals(symbol)` — WEEKLY QVMG factors: pe, pb, roe, roic,
+- `get_stock_fundamentals(symbol)` — WEEKLY QVMG factors: pe, pb, roe, roic,
   gross_profitability, fcf_yield, price_momentum, revenue_cagr, eps_growth,
   updated_at. Use it to sanity-check your computed ROE/ROIC and growth rates.
-- `stock-analysis(symbol)` — DAILY signal: price, rsi, trend, score, signal
+- `get_stock_signal(symbol)` — DAILY signal: price, rsi, trend, score, signal
   (BUY/HOLD/SELL), index_names, updated_at. Mostly market-monitoring's turf;
   include only the price/date if you need a reference point.
 
@@ -118,7 +118,7 @@ A cited wrong number can be checked; an uncited number is worthless.
 **1. Gather.** Identify the company and mode. If a filing is uploaded, locate the
 statements and note their page ranges. If web, pull the latest 10-K plus the most
 recent 10-Q from EDGAR. For a Top 500 name, optionally call
-`stock-fundamentals` for the factor cross-check — and degrade gracefully if it
+`get_stock_fundamentals` for the factor cross-check — and degrade gracefully if it
 fails.
 
 **2. Compute via code — never in your head.** Ratios, YoY changes, CAGRs, margin

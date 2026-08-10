@@ -83,9 +83,9 @@ A 10-K, 10-Q, or annual report is attached.
 For any name in the Oxinion universe, call these in parallel with your other
 research — they're a fast, model-computed cross-check the reader can trust:
 
-- **`stock-analysis(symbol)`** — daily signal: `price`, `rsi`, `trend`, `score`,
+- **`get_stock_signal(symbol)`** — daily signal: `price`, `rsi`, `trend`, `score`,
   `signal` (BUY/HOLD/SELL), `index_names`, `updated_at`.
-- **`stock-fundamentals(symbol)`** — weekly QVMG factors: `pe`, `pb`, `roe`,
+- **`get_stock_fundamentals(symbol)`** — weekly QVMG factors: `pe`, `pb`, `roe`,
   `roic`, `gross_profitability`, `fcf_yield`, `price_momentum`, `revenue_cagr`,
   `eps_growth`, `updated_at`.
 
@@ -271,7 +271,7 @@ into next.
   calculation in a card footnote.**
 - Record page numbers precisely.
 
-**Oxinion MCP (Top 500)** — call `stock-analysis` and `stock-fundamentals` in
+**Oxinion MCP (Top 500)** — call `get_stock_signal` and `get_stock_fundamentals` in
 parallel with the above; convert the QVMG decimals to percentages.
 
 ### Step 3 — calculate

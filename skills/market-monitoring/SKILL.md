@@ -31,7 +31,7 @@ re-openable dashboard for a watchlist — with a short chat handoff pointing to 
 
 Where this skill is strongest: **Oxinion Finance** provides the live per-symbol
 signal (price, RSI, trend, score, BUY/HOLD/SELL) for Top 500 names, and
-`portfolio-analysis()` powers the user's own watchlist with those same signals.
+`analyze_portfolio()` powers the user's own watchlist with those same signals.
 Everything else — news, insider, 13F, filings — is web and SEC EDGAR. The MCP
 carries none of that, so the skill must work fully without it.
 
@@ -67,18 +67,18 @@ Pick the mode from intent; you can chain several in one run.
 ## Data sources
 
 - **Oxinion Finance MCP** — the trusted live layer for Top 500 names.
-  - `stock-analysis(symbol)`: daily price, rsi, trend, score, signal
+  - `get_stock_signal(symbol)`: daily price, rsi, trend, score, signal
     (BUY/HOLD/SELL), index_names, updated_at. This is the core price/signal
     source for this skill.
-  - `stock-fundamentals(symbol)`: weekly QVMG (pe, pb, roe, roic,
+  - `get_stock_fundamentals(symbol)`: weekly QVMG (pe, pb, roe, roic,
     gross_profitability, fcf_yield, price_momentum, revenue_cagr, eps_growth,
     updated_at). Use when a mode needs a valuation or quality touchpoint. Values
     are decimal fractions — 0.42 means 42%; multiply rate factors by 100 and add
     "%", show pe/pb as `x` (e.g. `pe 24.1x`).
-  - `portfolio-analysis()`: the authenticated user's holdings and target
+  - `analyze_portfolio()`: the authenticated user's holdings and target
     allocation enriched with live signals — the backbone of a personal
     watchlist.
-  - `run-autopilot()`: dry-run rebalance preview only; it never trades. Mention
+  - `get_autopilot()`: dry-run rebalance preview only; it never trades. Mention
     it only if the user asks "what would rebalancing do?"
   - If a symbol is outside the Top 500 the tool errors; a missing API key or an
     unreachable server fails the same way. In every failure case, skip the
@@ -92,8 +92,8 @@ Pick the mode from intent; you can chain several in one run.
 
 1. **Read the ask.** Identify the ticker(s) and which mode(s) apply. One name or
    many? Which windows or filings matter?
-2. **Pull the Oxinion signal** for each Top 500 name via `stock-analysis`. For a
-   personal watchlist call `portfolio-analysis()` once. On any error, drop the
+2. **Pull the Oxinion signal** for each Top 500 name via `get_stock_signal`. For a
+   personal watchlist call `analyze_portfolio()` once. On any error, drop the
    Oxinion block for that name and continue on the web.
 3. **Gather the web/EDGAR layer** the chosen modes need: headlines, Form 4, 13F,
    filing index. Keep source URLs as you go.
@@ -192,7 +192,7 @@ Every number ties to a source:
 | Mixing option grants/exercises into "insider buying" | Separate open-market trades from grants/exercises/tax |
 | Inventing a page number for a web headline | URL only for web sources |
 | Dumping 60 tickers into one watchlist pass | Cap ~25; batch and say so |
-| Treating `run-autopilot()` as a trade | It is a dry-run preview only |
+| Treating `get_autopilot()` as a trade | It is a dry-run preview only |
 
 ---
 

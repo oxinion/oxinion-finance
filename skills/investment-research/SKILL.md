@@ -74,9 +74,9 @@ Two source classes. Know which carries which, and never blur them.
 ("Top 500"). For an in-universe name, pull the live signal and the factor read before reaching for
 the web:
 
-- `stock-analysis(symbol)` — DAILY: price, rsi, trend, score, signal (BUY/HOLD/SELL),
+- `get_stock_signal(symbol)` — DAILY: price, rsi, trend, score, signal (BUY/HOLD/SELL),
   index_names, updated_at. This is the live tape for the price-action section.
-- `stock-fundamentals(symbol)` — WEEKLY QVMG: pe, pb, roe, roic, gross_profitability, fcf_yield,
+- `get_stock_fundamentals(symbol)` — WEEKLY QVMG: pe, pb, roe, roic, gross_profitability, fcf_yield,
   price_momentum, revenue_cagr, eps_growth, updated_at. Rate factors are decimal fractions
   (0.42 = 42% — multiply by 100 and add "%"); pe and pb read as `x`. Banks and insurers return
   null for roic, gross_profitability, and fcf_yield — say so rather than inventing figures.
@@ -100,7 +100,7 @@ statements:
 
 ## Workflow
 
-1. **Gather across sources.** For a Top 500 name, call `stock-analysis` and `stock-fundamentals`
+1. **Gather across sources.** For a Top 500 name, call `get_stock_signal` and `get_stock_fundamentals`
    first and record each value with its `updated_at`. Then collect what the MCP can't give:
    filings and statements from SEC EDGAR, the latest transcript, consensus, the proxy, and recent
    news — each captured with its URL and access date, or page number for uploads. If the MCP is

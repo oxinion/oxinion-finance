@@ -39,7 +39,12 @@ Work through each and score it (Low / Moderate / High), with the evidence:
 ## Data sources
 
 - Prefer primary filings (10-K / 10-Q) and the company's reported statements.
-- For names in the Oxinion Finance universe (Global Top 100), call `stock-fundamentals` for the QVMG factor read (quality/leverage signals) and `stock-analysis` for the live price signal, and label that data `Source: Oxinion Finance`. Oxinion ratios are decimal fractions (0.15 = 15%). If the ticker is outside the universe, skip the Oxinion layer rather than backfilling.
+- Pull the numbers from the Oxinion Finance MCP, labeled `Source: Oxinion Finance`:
+  - `get_latest_filing` — the latest SEC filing plus structured `facts` (income statement + balance sheet, page-cited). Your primary numeric source for the **Margin deterioration** lens (gross/operating/net margins and their trend across fiscal periods) and part of the **Debt** lens (total liabilities vs. equity and assets).
+  - `get_stock_fundamentals` — QVMG factor read (ROIC, ROE, gross profitability, P/E, P/B, FCF yield, momentum, growth) for names in the Oxinion universe (~500). Ratios are decimal fractions (0.15 = 15%).
+  - `get_earnings_history` / `get_dividend_history` — EPS trajectory and dividend/payout durability, for the **Business** and **Valuation** lenses.
+  - `get_stock_signal` — live price, RSI, trend, and BUY/HOLD/SELL signal (Oxinion universe).
+  - `get_stock_quote` — for ANY ticker, including names **outside** the Oxinion universe (Yahoo): price, 52-week range (valuation-vs-history), sector/industry (business risk). Use this instead of skipping when a name is out of universe.
 - Never fabricate figures. If a number isn't available, say so.
 
 ## Output

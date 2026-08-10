@@ -5,7 +5,7 @@ autopilot preview — all powered by the **Oxinion Finance** connector.
 
 Skills are written to be framework-independent: the analytical instructions
 stand on their own, and the only Oxinion-specific dependency is the MCP
-connector's four tools.
+connector's tools.
 
 ## Components
 
@@ -23,8 +23,8 @@ connector's four tools.
 | `investment-research`   | "Write a full research note on [ticker]"                   |
 
 Portfolio review and the autopilot rebalance preview are handled by the
-`portfolio-manager` agent, which calls the connector's `portfolio-analysis`
-and `run-autopilot` tools directly.
+`portfolio-manager` agent, which calls the connector's `analyze_portfolio`
+and `get_autopilot` tools directly.
 
 ### Agents (2)
 
@@ -43,7 +43,7 @@ and `run-autopilot` tools directly.
 
 | Connector       | How it's referenced                                                                                                                                                                                                                                                                      |
 | --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Oxinion Finance | Referenced by name in `.mcp.json`. Hosted connector with a dynamic endpoint — no URL to configure; connecting it in Claude is all that's needed. Provides `stock-analysis`, `stock-fundamentals`, `portfolio-analysis`, and `run-autopilot`. Covers the Oxinion Global Top 100 universe. |
+| Oxinion Finance | Referenced by name in `.mcp.json`. Hosted connector with a dynamic endpoint — no URL to configure; connecting it in Claude is all that's needed. Provides `get_stock_quote`, `get_stock_signal`, `get_stock_fundamentals`, `get_earnings_history`, `get_dividend_history`, `get_latest_filing`, `get_portfolio`, `get_portfolio_positions`, `analyze_portfolio`, and `get_autopilot`. Covers the Oxinion Global Top 500 universe. |
 
 ## Install
 
@@ -67,10 +67,10 @@ then connect the Oxinion Finance connector.
 ## Setup notes
 
 - Stock signals refresh daily; the QVMG factor scorecard refreshes weekly.
-- The `portfolio-manager` agent (via the connector's `portfolio-analysis` and
-  `run-autopilot` tools) reads the target allocation saved to your Oxinion
+- The `portfolio-manager` agent (via the connector's `analyze_portfolio` and
+  `get_autopilot` tools) reads the target allocation saved to your Oxinion
   account — set that up in Oxinion Finance first, or it'll return empty.
-- Names outside the Oxinion Global Top 100 return an out-of-universe message
+- Names outside the Oxinion Global Top 500 return an out-of-universe message
   rather than fabricated numbers.
 - Everything here is automated market data and analysis, **not** personalized
   investment advice, and autopilot never executes live trades.

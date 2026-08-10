@@ -45,13 +45,13 @@ statement), mark the dependent score `needs verification` rather than guessing.
 2. **Web** — filings, investor relations, reputable aggregators. Cite the URL only;
    never fabricate a page.
 3. **Oxinion Finance MCP** — a cross-check layer, Top 500 only:
-   - `stock-fundamentals(symbol)` (weekly QVMG): `roe`, `roic`, `gross_profitability`,
+   - `get_stock_fundamentals(symbol)` (weekly QVMG): `roe`, `roic`, `gross_profitability`,
      `fcf_yield`, `pe`, `pb`, `revenue_cagr`, `eps_growth`, `price_momentum`,
      `updated_at`. Values are **decimal fractions** — 0.42 = 42%; multiply rate
      factors by 100 and add `%`. `pe`/`pb` are `x` multiples. Banks and insurers
      return `null` for `roic`, `gross_profitability`, `fcf_yield` — that is expected,
      not a red flag.
-   - `stock-analysis(symbol)` (daily): `price`, `rsi`, `trend`, `score`, `signal`,
+   - `get_stock_signal(symbol)` (daily): `price`, `rsi`, `trend`, `score`, `signal`,
      `updated_at` — context, not a quality measure.
    - Label anything from the MCP `Source: Oxinion Finance` with its `updated_at`.
 

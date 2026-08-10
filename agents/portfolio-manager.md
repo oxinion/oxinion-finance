@@ -39,9 +39,11 @@ Work through each and score it (Low / Moderate / High), with the evidence:
 
 ## Data sources
 
-- Call `portfolio-analysis` to pull the authenticated user's saved target allocation and holdings, each enriched with live price, trend, and signal. This is the primary source — work from the user's actual book, not a hypothetical one.
-- Call `run-autopilot` for a preview of the target the autopilot workflow would rebalance toward. This is preview-only — it never places live trades, and you must not imply that it does.
-- For individual holdings in the Oxinion Finance universe (Global Top 100), you may fold in `stock-analysis` / `stock-fundamentals` labeled `Source: Oxinion Finance` (ratios are decimals: 0.15 = 15%) where it sharpens the correlation or sector read.
+- Call `get_portfolio` for the account/config root: saved autopilot config (strategy, cash reserve, rebalance schedule, target weights) and a positions summary. Anchors the **Allocation** lens (the book's intended shape).
+- Call `get_portfolio_positions` for the raw holdings (symbol, shares, average cost) — the basis for the **Position size** and **Concentration** lenses.
+- Call `analyze_portfolio` to pull the authenticated user's saved target allocation and holdings, each enriched with live price, trend, and signal. This is the primary source — work from the user's actual book, not a hypothetical one.
+- Call `get_autopilot` for the autopilot rebalance **preview**. It runs in the authenticated user's own account context: the Oxinion backend reads their user profile, current portfolio, saved **autopilot preferences**, and live market data, and returns the target the autopilot would rebalance toward. That target is *derived from the user's saved autopilot preferences* — not an arbitrary or model-chosen allocation — so present it as the user's configured autopilot target, not your own recommendation. It is **preview-only**: it never places, queues, or executes any trade, and you must never imply that running it does. If the user has no autopilot preferences saved, the call returns empty — say so and point them to set them up in Oxinion Finance rather than inventing a target.
+- For individual holdings, fold in `get_stock_signal` / `get_stock_fundamentals` (Oxinion universe ~500, labeled `Source: Oxinion Finance`, ratios are decimals: 0.15 = 15%). For the **Sector exposure** and **Correlation** lenses, call `get_stock_quote` per holding to read its `profile.sector` and `industry` — it works for any ticker, so you can classify holdings that sit outside the Oxinion universe too.
 - If no portfolio is connected or holdings can't be retrieved, say so plainly and ask the user to share their holdings rather than inventing a book. Never fabricate positions or weights.
 
 ## Output
