@@ -52,7 +52,7 @@ and `get_autopilot` tools directly.
 This repo doubles as a plugin marketplace, so anyone can add it and install:
 
 ```bash
-/plugin marketplace add oxinion/finance-plugin
+/plugin marketplace add oxinion/oxinion-finance
 /plugin install oxinion-finance@oxinion-finance
 ```
 
@@ -63,6 +63,23 @@ in. Updates are pulled with `/plugin marketplace update oxinion-finance`.
 
 Upload the `.plugin` file in Cowork's plugin settings ("Uploaded from file"),
 then connect the Oxinion Finance connector.
+
+## Agent Skill
+
+The six research skills also install standalone into any Agent Skills-compatible
+agent (Claude Code, etc.) straight from this repo:
+
+```bash
+npx skills add oxinion/oxinion-finance
+```
+
+This copies the skills under `skills/*/SKILL.md` into your agent's skills
+directory. Note that `npx skills add` installs the **skills only** — not the
+`financial-analyst` / `portfolio-manager` agents, the `/analyze-company`
+command, or the Oxinion Finance MCP connector. For the skills' live data
+(signals, QVMG factors, filings, portfolio) also connect the Oxinion Finance
+MCP at `https://mcp.oxinion.com/finance/mcp`. For the full bundle (skills +
+agents + connector), install the plugin via the marketplace above.
 
 ## Setup notes
 
